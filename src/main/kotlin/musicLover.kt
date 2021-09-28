@@ -5,15 +5,18 @@ fun main() {
     val discountStart10000 = 10001;
     val newPurchaseAmount = 23781;
     var totalPrice = 0;
+    var musicLover = false;
 
     if (previousPurchaseAmount >= discountStart10000) {
         totalPrice = (newPurchaseAmount / 100) * 95;
-        totalPrice = (totalPrice / 100) * 99;
-        println("Итоговая стоимость: $totalPrice");
+        musicLover = true;
     } else if (previousPurchaseAmount >= discountStart1000) {
         totalPrice = newPurchaseAmount - discount;
-        println("Итоговая стоимость: $totalPrice");
-    }else {
-        println("Итоговая стоимость: $newPurchaseAmount");
+    } else {
+        totalPrice = newPurchaseAmount;
     }
+    if (musicLover) {
+        totalPrice = (totalPrice / 100) * 99;
+    }
+    println("Итоговая стоимость: $totalPrice");
 }
